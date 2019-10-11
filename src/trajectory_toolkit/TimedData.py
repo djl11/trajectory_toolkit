@@ -294,9 +294,9 @@ class TimedData:
     def applyBodyTransform(self, pos, att, translation, rotation):
         posID = self.getColIDs(pos)
         attID = self.getColIDs(att)
-        if translation == None:
+        if translation is None:
             translation = np.array([0.0, 0.0, 0.0])
-        if rotation == None:
+        if rotation is None:
             rotation = np.array([1.0, 0, 0, 0])
         newTranslation = self.col(posID) \
                          + Quaternion.q_rotate(Quaternion.q_inverse(self.col(attID)),
